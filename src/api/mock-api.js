@@ -9,7 +9,9 @@ class MockAPI {
   }
 
   getUsers() {
-    return Promise.resolve(this._users);
+    return new Promise((res, rej) => {
+      setTimeout(() => res(this._users), 5000);
+    });
   }
 }
 
