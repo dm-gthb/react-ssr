@@ -8,8 +8,15 @@ import Routes from './Routes';
 import reducers from './reducers';
 import thunk from 'redux-thunk';
 import { renderRoutes } from 'react-router-config';
+import { getAPI } from './api';
 
-const store = createStore(reducers, window.INITIAL_STATE, applyMiddleware(thunk));
+const API_URL = '/api';
+
+const store = createStore(
+  reducers, 
+  window.INITIAL_STATE, 
+  applyMiddleware(thunk.withExtraArgument(getAPI(API_URL)))
+);
 
 ReactDOM.hydrate(
   <Provider store={store}>

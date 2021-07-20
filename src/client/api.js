@@ -1,15 +1,11 @@
 import axios from "axios";
 
-const TIMEOUT = 5000;
-const PORT = process.env.API_PORT || 3005;
-const defaultURL = `http://localhost:${PORT}/api`;
-
 class API {
-  constructor(baseURL, timeout) {
+  constructor(baseURL, headers = {}) {
     this._http = axios.create({
       baseURL,
-      timeout
-    })
+      headers
+    });
   }
 
   async _load(url, options) {
@@ -22,4 +18,6 @@ class API {
   }
 }
 
-export default new API(defaultURL, TIMEOUT);
+const getAPI = (baseURL, headers) => new API(baseURL, headers);
+
+export {getAPI};
