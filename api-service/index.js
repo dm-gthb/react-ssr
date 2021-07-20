@@ -2,7 +2,7 @@ const { Router } = require("express");
 const express = require(`express`);
 const { users } = require("./data");
 
-const PORT = 3005;
+const PORT = process.env.API_PORT || 3005;
 const app = express();
 
 const apiRoute = new Router();
