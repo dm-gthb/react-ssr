@@ -16,6 +16,22 @@ class API {
   getUsers() {
     return this._load('/users');
   }
+
+  getCurrentUser() {
+    return this._load('/currentUser');
+  }
+
+  authUser() {
+    return this._load('/auth');
+  }
+
+  logoutUser() {
+    return this._load('/logout');
+  }
+
+  getAdmins() {
+    return this._load('/admins'); 
+  }
 }
 
 const getAPI = (baseURL, headers) => new API(baseURL, headers);

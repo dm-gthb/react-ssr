@@ -10,7 +10,7 @@ export default (req) => {
   const headers = {cookie: req.get('cookie') || ''};
   const store = createStore(
     reducers, 
-    {}, 
+    {},
     applyMiddleware(thunk.withExtraArgument(getAPI(apiUrl, headers)))
   );
 

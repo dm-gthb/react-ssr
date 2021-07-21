@@ -5,4 +5,10 @@ module.exports = {
     {id: '3', name: 'user c'},
     {id: '4', name: 'user d'},
   ],
+  admins: [
+    {id: '1', name: 'admin a'},
+    {id: '2', name: 'admin b'},
+    {id: '3', name: 'admin c'},
+    {id: '4', name: 'admin d'},
+  ],
 };
